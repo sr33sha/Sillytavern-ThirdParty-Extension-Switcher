@@ -1,0 +1,11 @@
+{
+    "display_name": "Third Party Extension Switcher",
+    "loading_order": 100,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "srisha",
+    "version": "2.0.0",
+    "auto_update": false
+}

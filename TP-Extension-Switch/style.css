@@ -1,0 +1,84 @@
+/* left/top are set by index.js (draggable position); these are only fallbacks. */
+#tt-rp-switch-toggle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    background-color: var(--SmartThemeBlurTintColor);
+    border: 1px solid var(--SmartThemeBorderColor);
+    backdrop-filter: blur(var(--SmartThemeBlurStrength));
+    cursor: grab;
+    color: var(--SmartThemeBodyColor);
+    /* Without these, touch drags scroll the page and long-presses select text / open menus. */
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+#tt-rp-switch-toggle:active {
+    cursor: grabbing;
+}
+
+#tt-rp-switch-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+    padding: 12px;
+    min-width: 220px;
+    max-width: calc(100vw - 24px);
+    max-height: min(70vh, 480px);
+    overflow-y: auto;
+    background-color: var(--SmartThemeBlurTintColor);
+    border: 1px solid var(--SmartThemeBorderColor);
+    backdrop-filter: blur(var(--SmartThemeBlurStrength));
+    border-radius: 10px;
+}
+
+.tt-rp-switch-hidden {
+    display: none !important;
+}
+
+.tt-rp-switch-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.tt-rp-switch-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.tt-rp-switch-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tt-rp-switch-hint,
+.tt-rp-switch-note {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.tt-rp-switch-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+}
