@@ -1,7 +1,7 @@
 # Sillytavern-ThirdParty-Extension-Switcher
 Now you get a nice floating button that can help you quickly toggle your favorite third-party extensions. Now, how cool is that?
 
-<img width="321" height="560" alt="Screenshot 2026-09-23 213810" src="https://github.com/user-attachments/assets/83203604-cd1d-49a0-88df-0646279b4191" />
+<img width="321" height="560" alt="Screenshot 2026-09-23 213810" src="https://github.com/user-attachments/assets/83203604-cd1d-49a0-88df-0646279b4191" style="display: block; margin: 0 auto;" />
 
 First select which third-party extensions you wanna quick toggle. 
 
