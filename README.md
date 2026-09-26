@@ -13,6 +13,4 @@ First select which third-party extensions you wanna quick toggle.
 
 And after that, it's about dealing with your current stack. Sounds simple, right?
 
-Works for both Sillytavern and Tauritavern.
-
 
