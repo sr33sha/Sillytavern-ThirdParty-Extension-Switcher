@@ -375,7 +375,11 @@ function createPanelController(panel, onContentChanged) {
             content.append(makeElement("div", "tt-rp-switch-hint", "Toggle as many as you want, then reload once."));
 
             const buttons = makeElement("div", "tt-rp-switch-buttons");
-            buttons.append(makeButton("Reload Now", () => location.reload()));
+            // FIX: await a full (non-debounced) save before reloading so toggled state is never lost.
+            buttons.append(makeButton("Reload Now", async () => {
+                await scriptModule.saveSettings?.();
+                location.reload();
+            }));
             buttons.append(makeButton("Edit list", () => {
                 editing = true;
                 render();
@@ -441,4 +445,14 @@ function init() {
     });
 }
 
-init();
+// FIX: Wait for ST's APP_READY event so the button only appears after all extensions have loaded
+// and extension_settings is fully populated. Falls back to immediate init if the event system
+// is unavailable (e.g. a future ST version changes the API).
+const eventSource = scriptModule.eventSource;
+const appReady = scriptModule.event_types?.APP_READY;
+
+if (eventSource && appReady) {
+    eventSource.once(appReady, init);
+} else {
+    init();
+}
